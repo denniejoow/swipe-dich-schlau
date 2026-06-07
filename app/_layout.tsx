@@ -1,6 +1,7 @@
 import { Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { router } from 'expo-router';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { supabase } from '../utils/supabase';
 
 export default function RootLayout() {
@@ -15,13 +16,15 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="auth" />
-      <Stack.Screen name="index" />
-      <Stack.Screen name="generator" />
-      <Stack.Screen name="run/[scriptId]" />
-      <Stack.Screen name="run/battle" />
-      <Stack.Screen name="leaderboard" />
-    </Stack>
+    <SafeAreaProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="auth" />
+        <Stack.Screen name="index" />
+        <Stack.Screen name="generator" />
+        <Stack.Screen name="run/[scriptId]" />
+        <Stack.Screen name="run/battle" />
+        <Stack.Screen name="leaderboard" />
+      </Stack>
+    </SafeAreaProvider>
   );
 }
