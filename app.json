@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Swipe dich schlau!",
+    "slug": "swipe-dich-schlau",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "swipe-dich-schlau",
+    "web": { "bundler": "metro" },
+    "plugins": ["expo-router"]
+  }
+}
